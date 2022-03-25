@@ -1,2 +1,21 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+/* WELCOME PAGES */
+
+header {
+  background-color: #927C60;
+}
+
+.hero {
+  background: url('paper.png') 50% 50%/cover no-repeat fixed;
+  padding: 100px 0;
+}
+
+.btn-brown {
+  background-color: #cdc2b1;
+  box-shadow: 2px 2px 5px #000;
+  &:hover {
+    box-shadow: 3px 3px 7px #000;
+  }
+}
