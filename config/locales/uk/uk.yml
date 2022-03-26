@@ -1,0 +1,9 @@
+uk:
+  global:
+    en_switch: "EN"
+    uk_switch: "UK"
+  welcome_pages:
+    welcome: 
+      title: "Вітаємо у BOOKER.ka"
+      subtitle: "Шукайте книги, купуйте книги, читайте книги. Усе в одному місці!"
+      sign_in: "Зареєструватись"
