@@ -10,8 +10,15 @@
 
 .btn-brown {
   background-color: #cdc2b1;
+}
+
+.shadowed {
   box-shadow: 2px 2px 5px #000;
   &:hover {
     box-shadow: 3px 3px 7px #000;
   }
+}
+
+.font-weight-bold {
+  font-weight: 700;
 }

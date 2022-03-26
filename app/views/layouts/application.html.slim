@@ -9,4 +9,8 @@ html
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   body
+    .d-flex.justify-content-end.fixed-top.p-2 
+      .d-flex
+        - I18n.available_locales.each do |locale|
+          = button_to I18n.t("global.#{locale}_switch"), locale_path(locale), method: :put, class: "btn btn-brown shadowed mx-1 #{'disabled' if current_locale?(locale)}"
     = yield
