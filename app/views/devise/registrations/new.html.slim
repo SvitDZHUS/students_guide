@@ -1,0 +1,13 @@
+.container-fluid.hero.mb-4.text-center
+  h1.display-2 = t('devise.registrations.new.title')
+div.row.justify-content-center
+  div.col-6
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      .field.mb-4
+        = f.input :email, autofocus: true, autocomplete: "email", class: 'form-control'
+      .field.mb-4
+        = f.input :password, autocomplete: "new-password"
+      .field.mb-4
+        = f.input :password_confirmation, autocomplete: "new-password"
+      .actions.d-flex.justify-content-end
+        = f.button :submit, t('devise.registrations.new.title'), class:'border-brown font-weight-bold animated-shadow'

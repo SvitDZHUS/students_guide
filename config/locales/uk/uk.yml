@@ -2,8 +2,12 @@ uk:
   global:
     en_switch: "EN"
     uk_switch: "UK"
+    translate: "BOOKER.ka тепер українською!"
+  header:
+    sign_in: "Увійти"
+    sign_up: "Зареєструватись"
+    sign_out: "Вийти"
   welcome_pages:
     welcome: 
       title: "Вітаємо у BOOKER.ka"
       subtitle: "Шукайте книги, купуйте книги, читайте книги. Усе в одному місці!"
-      sign_in: "Зареєструватись"

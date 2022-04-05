@@ -1,0 +1,14 @@
+- if controller_name != 'sessions'
+  = link_to t('devise.sessions.new.login'), new_session_path(resource_name), class:'btn border-brown animated-shadow font-weight-bold mx-1'
+- else
+  - if devise_mapping.omniauthable?
+    - resource_class.omniauth_providers.each do |provider|
+      = link_to t('devise.shared.links.sign', provider: t("devise.providers.#{provider}")), omniauth_authorize_path(resource_name, provider), class:'btn border-brown animated-shadow font-weight-bold mx-1', method: :post
+- if devise_mapping.registerable? && controller_name != 'registrations'
+  = link_to t('devise.registrations.new.title'), new_registration_path(resource_name), class:'btn border-brown animated-shadow font-weight-bold mx-1'
+- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+  = link_to t('devise.passwords.new.title'), new_password_path(resource_name), class:'btn border-brown animated-shadow font-weight-bold mx-1'
+- if devise_mapping.confirmable? && controller_name != 'confirmations'
+  = link_to t('devise.shared.links.confirm'), new_confirmation_path(resource_name), class:'btn border-brown animated-shadow font-weight-bold mx-1'
+- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
+  = link_to t('devise.shared.links.unlock'), new_unlock_path(resource_name), class:'btn border-brown animated-shadow font-weight-bold mx-1'
