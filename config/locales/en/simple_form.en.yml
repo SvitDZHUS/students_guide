@@ -1,0 +1,15 @@
+en:
+  simple_form:
+    labels:
+      user:
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Pasword confirmation"
+        remember_me: "Remember me"
+    yes: "Yes"
+    no: "No"
+    required:
+      text: "required"
+      mark: "*"
+    error_notification:
+      default_message: "Please review the problems below:"

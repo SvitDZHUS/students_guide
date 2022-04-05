@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LocalesController < ApplicationController
   def update
     cookies[:locale] = params[:locale]

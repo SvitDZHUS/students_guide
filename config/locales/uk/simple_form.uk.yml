@@ -1,0 +1,15 @@
+uk:
+  simple_form:
+    labels:
+      user:
+        email: "Адреса електронної пошти"
+        password: "Пароль"
+        password_confirmation: "Підтверждення пароля"
+        remember_me: "Запам'ятати мене"
+    yes: "Так"
+    no: "Ні"
+    required:
+      text: "обов'язково"
+      mark: "*"
+    error_notification:
+      default_message: "Перегляньте наведені нижче проблеми:"

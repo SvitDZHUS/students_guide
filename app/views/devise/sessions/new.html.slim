@@ -1,0 +1,14 @@
+.container-fluid.hero.mb-4.text-center
+  h1.display-2 = t('devise.sessions.new.login')
+div.row.justify-content-center
+  div.col-6
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field.mb-4
+        = f.input :email, autofocus: true, autocomplete: "email"
+      .field.mb-4
+        = f.input :password, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        .field.mb-4
+          = f.input :remember_me, as: :boolean
+      .actions.d-flex.justify-content-end
+        = f.button :submit, t('devise.sessions.new.login'), class:'border-brown font-weight-bold animated-shadow'
