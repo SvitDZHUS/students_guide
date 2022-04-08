@@ -1,0 +1,10 @@
+= simple_form_for(@book) do |f|
+  = f.input :title, placeholder: t('books.form.title_placeholder')
+  = f.input :description, placeholder: t('books.form.description_placeholder')
+  = f.collection_check_boxes :category_ids, Category.all, :id, :category_name
+  = f.input :price, placeholder: t('books.form.price_placeholder')
+  = f.input :publishing_house, placeholder: t('books.form.publishing_house_placeholder')
+  = f.input :publishing_date, placeholder: t('books.form.publishing_date_placeholder')
+  = f.file_field :file, class: "custom-file-input"
+  = f.input :language, placeholder: t('books.form.language_placeholder')
+  = f.submit t('global.forms.submit'), class:"btn btn-primary"

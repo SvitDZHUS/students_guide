@@ -1,0 +1,6 @@
+.row
+  .col-6
+    h1 = t('.title')
+    = render 'books/form'
+    = link_to t('.show'), @book, class:"btn btn-xs btn-success mt-3"
+    = link_to t('.back'), books_path, class:"btn btn-xs btn-info mt-3 ml-3"
