@@ -3,6 +3,7 @@ uk:
     en_switch: "EN"
     uk_switch: "UK"
     translate: "BOOKER.ka тепер українською!"
+    access: "Ви не маєте доступу до цієї сторінки!"
   header:
     sign_in: "Увійти"
     sign_up: "Зареєструватись"
