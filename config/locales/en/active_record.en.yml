@@ -4,3 +4,14 @@ en:
       user:
         email: "Email"
         password: "Password"
+      category:
+        category_name: "Category Name"
+      book:
+        title: "Title"
+        author: "Author"
+        description: "Description"
+        price: "Price"
+        publishing_house: "Publishing House"
+        publishing_date: "Publishing Date"
+        cover: "Cover"
+        language: "Language"

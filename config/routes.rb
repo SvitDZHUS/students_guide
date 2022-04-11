@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'contacts', to: 'welcome_pages#contacts', as: :contacts
 
   resources :books
+  resources :categories
 end

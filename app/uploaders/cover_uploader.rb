@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CoverUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
   storage :file
 
   # Override the directory where uploaded files will be stored.
@@ -13,6 +14,14 @@ class CoverUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_allowlist
     %w[jpg jpeg png]
+  end
+
+  version :small do
+    process resize_to_fit: [100, 300]
+  end
+
+  version :large do
+    process resize_to_fit: [300, 900]
   end
 
   # Override the filename of the uploaded files:

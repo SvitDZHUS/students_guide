@@ -4,31 +4,34 @@ class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
 
   def index
-    @books = Book.all
+    @books = authorize policy_scope(Book).all
   end
 
   def new
-    @book = Book.new
+    
+    @book = policy_scope(Book).new
   end
 
   def create
-    @book = Book.new(book_params)
-    if @book.save
-      flash[:notice] = t('.controller.create')
-      redirect_to @book
-    else
-      render 'new'
+    @book = authorize policy_scope(Book).new(book_params)
+    respond_to do |format|
+      if @book.save
+        format.html { redirect_to @book, notice: t('.controller.create') }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
   def edit; end
 
   def update
-    if @book.update(book_params)
-      flash[:notice] = t('.controller.update')
-      redirect_to @book
-    else
-      render 'edit'
+    respond_to do |format|
+      if @book.update(book_params)
+        format.html { redirect_to @book, notice: t('.controller.update') }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -43,11 +46,11 @@ class BooksController < ApplicationController
   private
 
   def set_book
-    @book = Book.find(params[:id])
+    @book = authorize policy_scope(Book).find(params[:id])
   end
 
   def book_params
-    params.require(:book).permit(:title, :description, :category, :price, publishing_house, :publishing_date, :cover,
-                                 :language)
+    params.require(:book).permit(:title, :author, :description, :price, :publishing_house, :publishing_date, :cover,
+                                 :language, category_ids: [])
   end
 end

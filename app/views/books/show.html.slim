@@ -1,2 +1,39 @@
-h1 Books#show
-p Find me in app/views/books/show.html.slim
+= render 'books/banner'
+.container
+  = link_to books_path, class: 'border-brown animated-shadow btn font-weight-bold align-self-start mb-4' do 
+    i.bi.bi-caret-left
+    = t('.back')
+  .row 
+    .col-6.d-flex.justify-content-center
+      = image_tag @book.cover.url(:large)
+    .col-6 
+      p
+        strong = t('.title')
+        =< @book.title
+      p 
+        strong = t('.author')
+        =< @book.author
+      p 
+        strong = t('.description')
+        =< @book.description
+      p 
+        strong = t('.categories')
+        ul
+          - @book.categories.each do |category|
+            li =< category.category_name
+      p 
+        strong = t('.price')
+        =< @book.price
+        =< I18n.t('.uan')
+      p 
+        strong = t('.publishing_house')
+        =< @book.publishing_house
+      p 
+        strong = t('.publishing_date')
+        =< l @book.publishing_date, format: :publishing_date_format
+      p 
+        strong = t('.language')
+        =< @book.language
+      =< link_to edit_book_path(@book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
+        i.bi.bi-pencil-square
+        =< t('.edit')
