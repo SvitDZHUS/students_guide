@@ -2,13 +2,13 @@
 
 FactoryBot.define do
   factory :book do
-    title { 'MyString' }
-    description { 'MyText' }
-    category { 'MyString' }
-    price { '9.99' }
-    publishing_house { 'MyString' }
-    publishing_date { '2022-04-06' }
-    cover { 'MyString' }
-    language { 'MyString' }
+    title { Faker::Artist.name }
+    description { Faker::Lorem.paragraph }
+    category { create :category }
+    price { Faker::Number.number(digits: 3) }
+    publishing_house { Faker::University.name }
+    publishing_date { Faker::Date.between(from: '2014-09-23', to: '2021-09-25') }
+    cover { Faker::File.extension }
+    language { Faker::ProgrammingLanguage.name }
   end
 end

@@ -7,13 +7,13 @@
     = f.input :description, placeholder: t('books.form.description_placeholder')
   .field.mb-4
     .d-flex.flex-column.mt-1
-      = f.association :categories, as: :check_boxes, label_method: :category_name, value_method: :id, include_blank: false, collection: policy_scope(Category).all, wrapper: :vertical_collection_inline
+      = f.association :categories, as: :check_boxes, label_method: :category_name, value_method: :id, include_blank: false, collection: @categories, wrapper: :vertical_collection_inline
   .field.mb-4
     = f.input :price, placeholder: t('books.form.price_placeholder')
   .field.mb-4
     = f.input :publishing_house, placeholder: t('books.form.publishing_house_placeholder')
   .field.mb-4
-    = f.input :publishing_date, placeholder: t('books.form.publishing_date_placeholder')
+    = f.input :publishing_date, start_year: 990.years.ago.year, placeholder: t('books.form.publishing_date_placeholder')
   .field.mb-4
     = f.input :language, placeholder: t('books.form.language_placeholder')
   .field.mb-4.border-brown.p-3

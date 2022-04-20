@@ -12,10 +12,13 @@ en:
     sign_up: "Sign Up"
     sign_out: "Sign Out"
   sidebar:
-    logo: "BOOKER.ka | ADMIN"
+    admin_logo: "BOOKER.ka | ADMIN"
+    member_logo: "BOOKER.ka | MEMBER"
     profile: "Profile"
     categories: "Categories"
     books: "Books"
+    cart: "Cart"
+    shelf: "Shelf"
   welcome_pages:
     welcome: 
       title: "Welcome to BOOKER.ka"

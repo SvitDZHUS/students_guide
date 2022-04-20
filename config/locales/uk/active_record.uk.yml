@@ -15,3 +15,8 @@ uk:
         publishing_date: "Дата Видання"
         cover: "Обкладинка"
         language: "Мова"
+      profile:
+        first_name: "Ім'я"
+        last_name: "Прізвище"
+        phone: "Номер Телефону"
+        birthday: "День Народження"

@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-class BooksController < ApplicationController
+class BooksController < DashboardController
   before_action :set_book, only: %i[show edit update destroy]
+  before_action :set_categories, only: %i[new edit]
 
   def index
-    @books = authorize policy_scope(Book).all
+    @books = authorize Book.all
   end
 
   def new
-    
-    @book = policy_scope(Book).new
+    @book = authorize Book.new
   end
 
   def create
-    @book = authorize policy_scope(Book).new(book_params)
+    @book = authorize Book.new(book_params)
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: t('.controller.create') }
@@ -46,7 +46,11 @@ class BooksController < ApplicationController
   private
 
   def set_book
-    @book = authorize policy_scope(Book).find(params[:id])
+    @book = authorize Book.find(params[:id])
+  end
+
+  def set_categories
+    @categories = authorize Category.all
   end
 
   def book_params

@@ -15,3 +15,8 @@ en:
         publishing_date: "Publishing Date"
         cover: "Cover"
         language: "Language"
+      profile:
+        first_name: "First Name"
+        last_name: "Last Name"
+        phone: "Phone"
+        birthday: "Birthday"
