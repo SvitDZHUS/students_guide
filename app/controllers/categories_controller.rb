@@ -1,19 +1,20 @@
-class CategoriesController < ApplicationController
+# frozen_string_literal: true
+
+class CategoriesController < DashboardController
   before_action :set_category, only: %i[edit update destroy]
 
   def index
-    @categories = authorize policy_scope(Category).all
+    @categories = authorize Category.all
   end
 
   def new
-    @category = policy_scope(Category).new
+    @category = authorize Category.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
-    @category = authorize policy_scope(Category).new(category_params)
+    @category = authorize Category.new(category_params)
     respond_to do |format|
       if @category.save
         format.html { redirect_to categories_url, notice: t('.controller.create') }
@@ -42,7 +43,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @category = authorize policy_scope(Category).find(params[:id])
+    @category = authorize Category.find(params[:id])
   end
 
   def category_params

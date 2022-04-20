@@ -37,25 +37,6 @@ class ApplicationPolicy
   end
 
   def user_is_owner_of_record_or_admin?
-    user == record.created_by || user.admin?
-  end
-
-  class Scope
-    def initialize(user, scope)
-      @user = user
-      @scope = scope
-    end
-
-    def resolve
-      if user.admin?
-        scope.all
-      else
-        scope.by_user(user)
-      end
-    end
-
-    private
-
-    attr_reader :user, :scope
+    user == record.owned_by || user.admin?
   end
 end

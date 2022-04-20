@@ -1,4 +1,4 @@
-= render 'books/banner'
+= render 'shared/banner'
 .container
   = link_to books_path, class: 'border-brown animated-shadow btn font-weight-bold align-self-start mb-4' do 
     i.bi.bi-caret-left
@@ -24,7 +24,7 @@
       p 
         strong = t('.price')
         =< @book.price
-        =< I18n.t('.uan')
+        =< I18n.t('.uah')
       p 
         strong = t('.publishing_house')
         =< @book.publishing_house
@@ -34,6 +34,7 @@
       p 
         strong = t('.language')
         =< @book.language
-      =< link_to edit_book_path(@book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
-        i.bi.bi-pencil-square
-        =< t('.edit')
+      - if current_user.admin?
+        =< link_to edit_book_path(@book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
+          i.bi.bi-pencil-square
+          =< t('.edit')

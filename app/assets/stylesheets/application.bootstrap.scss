@@ -21,12 +21,16 @@ a, a:hover {
 }
 
 .hero {
-  background-color: #f1e4da;
+  background: url('hero.png');
   padding: 5em 0;
 }
 
 .brown {
   background-color: #4a321c;
+}
+
+.white {
+  background-color:hsla(0, 0%, 100%, 0.85); 
 }
 
 .border-brown {
