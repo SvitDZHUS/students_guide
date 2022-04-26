@@ -23,7 +23,7 @@ navbar.wrapper.shadow.border-right-brown
   .profile.p-2
     .btn-group.dropup.d-flex.justify-content-between.animated-shadow
       button.btn.brown.dropdown-toggle.d-flex.justify-content-between data-bs-toggle="dropdown" aria-expanded="true"
-        span.no-after.text-white = current_user.profile.first_name.upcase || current_user.email
+        span.no-after.text-white = current_user.profile.first_name || current_user.email
       ul.dropdown-menu
         li.nav-item.btn.border-brown.animated-shadow.d-flex.justify-content-between.align-items-center
           = button_to t('header.sign_out'), destroy_user_session_path, method: :delete, class: "btn font-weight-bold" 

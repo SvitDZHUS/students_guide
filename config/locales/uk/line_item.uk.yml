@@ -1,0 +1,6 @@
+uk:
+  line_items:
+    controller:
+      create: "Книжку додано до кошика"
+    create:
+      add_to_cart: "Додати у Кошик"

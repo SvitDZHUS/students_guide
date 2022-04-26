@@ -14,6 +14,9 @@
           .d-flex.justify-content-end
             =< link_to book, class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
               i.bi.bi-eye
+            =< button_to line_items_path(book_id: book), class:"mx-2 btn border-brown animated-shadow", method: :post do 
+              i.bi.bi-basket3-fill
+              strong =< t('line_items.create.add_to_cart')
             - if current_user.admin?
               =< link_to edit_book_path(book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
                 i.bi.bi-pencil-square

@@ -20,3 +20,8 @@ uk:
         last_name: "Прізвище"
         phone: "Номер Телефону"
         birthday: "День Народження"
+      line_item:
+        price: "Ціна"
+      order:
+        first_name: "Ім'я"
+        last_name: "Прізвище"

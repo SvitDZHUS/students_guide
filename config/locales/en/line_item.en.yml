@@ -1,0 +1,6 @@
+en:
+  line_items:
+    controller:
+      create: "Book was added to your cart"
+    create:
+      add_to_cart: "Add to Cart"

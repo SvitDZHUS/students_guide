@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   resources :carts, only: %i[show update]
   resources :shelves, only: %i[show update]
   resources :profiles, only: %i[show edit update]
+  resources :line_items, only: %i[create]
+  resources :orders
 end
