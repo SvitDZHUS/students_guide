@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class OrdersController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :paypal_init
@@ -10,24 +12,22 @@ class OrdersController < ApplicationController
     price = @order.cart.total_price.to_s
     request = PayPalCheckoutSdk::Orders::OrdersCreateRequest.new
     request.request_body({
-      intent: 'CAPTURE',
-      purchase_units: [
-        {
-          amount: {
-            currency_code: 'USD',
-            value: price
-          }
-        }
-      ]
-    })
+                           intent: 'CAPTURE',
+                           purchase_units: [
+                             {
+                               amount: {
+                                 currency_code: 'USD',
+                                 value: price
+                               }
+                             }
+                           ]
+                         })
 
     begin
       response = @client.execute(request)
       @order.token = response.result.id
       @order.price = price.to_i
-      if @order.save
-        render json: { token: response.result.id }, status: :ok
-      end
+      render json: { token: response.result.id }, status: :ok if @order.save
     rescue PayPalHttp::HttpError
       # HANDLE THE ERROR
     end
@@ -59,9 +59,7 @@ class OrdersController < ApplicationController
 
   def move_bought_items
     current_user.cart.line_items.each do |line_item|
-      line_item.update(lineable_id: current_user.shelf.id, lineable_type: "Shelf")
-      #current_user.shelf.line_items.create!(book_id: line_item.book_id, price: line_item.price)
-      #line_item.destroy
+      line_item.update(lineable_id: current_user.shelf.id, lineable_type: 'Shelf')
     end
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LineItemsController < ApplicationController
   def add_item_to_cart
     @book = Book.find(params[:book_id])
