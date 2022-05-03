@@ -1,9 +1,8 @@
 uk:
   line_items:
     controller:
-      create: "Книжку додано до кошика"
-      destroy: "Книжку видалено з кошика"
-    create:
+      add_item_to_cart: "Книжку додано до кошика"
+      remove_item_from_cart: "Книжку видалено з кошика"
+    actions:
       add_to_cart: "Додати у Кошик"
-    destroy:
       remove_from_cart: "Видалити з Кошика"

@@ -1,8 +1,8 @@
 en:
   line_items:
     controller:
-      create: "Book was added to your cart"
-      destroy: "Book was removed from your cart"
+      add_item_to_cart: "Book was added to your cart"
+      remove_item_from_cart: "Book was removed from your cart"
     create:
       add_to_cart: "Add to Cart"
     destroy:

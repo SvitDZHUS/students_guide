@@ -26,10 +26,13 @@ Rails.application.routes.draw do
   post :create_order, to: 'orders#create_order'
   post :capture_order, to: 'orders#capture_order'
 
+  resources :line_items, only: %i[destroy]
+  post :add_item_to_cart, to: 'line_items#add_item_to_cart'
+  post :move_item_to_shelf, to: 'line_items#move_item_to_shelf'
+
   resources :books
   resources :categories
   resources :carts, only: %i[show update]
   resources :shelves, only: %i[show update]
   resources :profiles, only: %i[show edit update]
-  resources :line_items, only: %i[create destroy]
 end

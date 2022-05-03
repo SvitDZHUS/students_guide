@@ -1,15 +1,22 @@
 class LineItemsController < ApplicationController
-  def create
+  def add_item_to_cart
     @book = Book.find(params[:book_id])
-    @line_item = LineItem.create!(cart_id: current_user.cart.id, book_id: @book.id, price: @book.price)
-    flash[:notice] = t('.controller.create')
+    current_user.cart.line_items.create!(book_id: @book.id, price: @book.price)
+    flash[:notice] = t('.controller.add_item_to_cart')
+    redirect_to current_user.cart
+  end
+
+  def move_item_to_shelf
+    @line_item = LineItem.find(params[:id])
+    @line_item.destroy
+    flash[:notice] = t('.controller.remove_item_from_cart')
     redirect_to current_user.cart
   end
 
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-    flash[:notice] = t('.controller.destroy')
+    flash[:notice] = t('.controller.remove_item_from_cart')
     redirect_to current_user.cart
   end
 end

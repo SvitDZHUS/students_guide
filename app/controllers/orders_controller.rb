@@ -5,8 +5,10 @@ class OrdersController < ApplicationController
   def new; end
 
   def create_order
-    price = '100.00'
-    request = PayPalCheckoutSdk::Orders::OrdersCreateRequest::new
+    @order = Order.new
+    @order.cart = current_user.cart
+    price = @order.cart.total_price.to_s
+    request = PayPalCheckoutSdk::Orders::OrdersCreateRequest.new
     request.request_body({
       intent: 'CAPTURE',
       purchase_units: [
@@ -18,12 +20,11 @@ class OrdersController < ApplicationController
         }
       ]
     })
+
     begin
       response = @client.execute(request)
-      @order = Order.new
-      @order.cart = current_user.cart
-      @order.price = price.to_i
       @order.token = response.result.id
+      @order.price = price.to_i
       if @order.save
         render json: { token: response.result.id }, status: :ok
       end
@@ -40,6 +41,7 @@ class OrdersController < ApplicationController
       @order.paid = response.result.status == 'COMPLETED'
       if @order.save
         render json: { status: response.result.status }, status: :ok
+        move_bought_items
       end
     rescue PayPalHttp::HttpError
       # HANDLE THE ERROR
@@ -53,5 +55,13 @@ class OrdersController < ApplicationController
     client_secret = ENV['PAYPAL_CLIENT_SECRET']
     environment = PayPal::SandboxEnvironment.new(client_id, client_secret)
     @client = PayPal::PayPalHttpClient.new(environment)
+  end
+
+  def move_bought_items
+    current_user.cart.line_items.each do |line_item|
+      line_item.update(lineable_id: current_user.shelf.id, lineable_type: "Shelf")
+      #current_user.shelf.line_items.create!(book_id: line_item.book_id, price: line_item.price)
+      #line_item.destroy
+    end
   end
 end

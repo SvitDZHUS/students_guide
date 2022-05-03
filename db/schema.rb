@@ -49,13 +49,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_26_191130) do
 
   create_table "line_items", force: :cascade do |t|
     t.decimal "price"
-    t.bigint "cart_id"
+    t.string "lineable_type"
+    t.bigint "lineable_id"
     t.bigint "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id", "cart_id"], name: "unique_index_of_line_items", unique: true
     t.index ["book_id"], name: "index_line_items_on_book_id"
-    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["lineable_type", "lineable_id"], name: "index_line_items_on_lineable"
   end
 
   create_table "orders", force: :cascade do |t|
