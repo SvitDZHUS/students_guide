@@ -10,18 +10,19 @@
           p.lead = book.author 
           p 
             =< book.price
-            =< I18n.t('.uah')
+            =< I18n.t('.usd')
           .d-flex.justify-content-end
             =< link_to book, class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
               i.bi.bi-eye
-            =< button_to line_items_path(book_id: book), class:"mx-2 btn border-brown animated-shadow", method: :post do 
-              i.bi.bi-basket3-fill
-              strong =< t('line_items.create.add_to_cart')
             - if current_user.admin?
               =< link_to edit_book_path(book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
                 i.bi.bi-pencil-square
               =< button_to book, form: { data: { turbo_confirm: t('global.forms.confirm') } }, class:"mx-2 btn border-brown animated-shadow", title: t('.destroy'), method: :delete do
                 i.bi.bi-trash3
+            - else 
+              =< button_to line_items_path(book_id: book), class:"mx-2 btn border-brown animated-shadow", method: :post do 
+                i.bi.bi-basket3-fill
+                strong =< t('line_items.create.add_to_cart')
   - if current_user.admin?
     .d-flex.justify-content-center
       = link_to t('.new_book'), new_book_path, class:"btn border-brown animated-shadow font-weight-bold w-50"

@@ -1,5 +1,5 @@
 en:
-  uah: "UAH"
+  usd: "USD"
   books:
     title: "Books"
     index:
@@ -30,6 +30,6 @@ en:
       title_placeholder: "Write book's title"
       author_placeholder: "Write author's full name or pseudonym"
       description_placeholder: "Write book's description"
-      price_placeholder: "Write book's price, UAH"
+      price_placeholder: "Write book's price, USD"
       publishing_house_placeholder: "Write book's publishing house"
       language_placeholder: "Write book's language"

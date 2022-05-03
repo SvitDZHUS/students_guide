@@ -22,11 +22,14 @@ Rails.application.routes.draw do
   get 'news', to: 'welcome_pages#about', as: :news
   get 'contacts', to: 'welcome_pages#contacts', as: :contacts
 
+  resources :orders, only: :new
+  post :create_order, to: 'orders#create_order'
+  post :capture_order, to: 'orders#capture_order'
+
   resources :books
   resources :categories
   resources :carts, only: %i[show update]
   resources :shelves, only: %i[show update]
   resources :profiles, only: %i[show edit update]
-  resources :line_items, only: %i[create]
-  resources :orders
+  resources :line_items, only: %i[create destroy]
 end
