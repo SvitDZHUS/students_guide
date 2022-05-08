@@ -26,6 +26,7 @@ en:
     welcome: 
       title: "Welcome to BOOKER.ka"
       subtitle: "Find books, buy books, manage books. Everything in one place!"
+      latest_books: "The Latest Books"
   date:
     formats:
       date_format: "%d %b %Y"

@@ -26,6 +26,7 @@ uk:
     welcome: 
       title: "Вітаємо у BOOKER.ka"
       subtitle: "Шукайте книги, купуйте книги, читайте книги. Усе в одному місці!"
+      latest_books: "Найновіші Книжки"
   date:
     formats:
       date_format: "%d %b %Y"

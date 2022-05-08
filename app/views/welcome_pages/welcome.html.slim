@@ -2,3 +2,17 @@
   .container.text-center.white
     h1.display-1 = t('welcome_pages.welcome.title')
     h2.mb-4 = t('welcome_pages.welcome.subtitle')
+.d-flex.justify-content-center.flex-column
+  .container
+    h1.display-4.text-center.border-bottom-brown.my-4.pb-4 = t('welcome_pages.welcome.latest_books')
+    .row.d-flex.justify-content-center
+      - @latest_books.each do |book|
+        .col-5.row.border-brown.p-4.m-2
+          .cover.col-4
+            = image_tag book.cover.url(:small)
+          .info.col-8
+            h3 = book.title 
+            p.lead = book.author 
+            p 
+              =< book.price
+              =< I18n.t('.usd')
