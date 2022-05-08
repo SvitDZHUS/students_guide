@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
     end
   end
 
-  include Pundit
+  include Pundit::Authorization
 
   rescue_from Pundit::NotAuthorizedError do
     redirect_to defined_root_path, notice: t('global.access')

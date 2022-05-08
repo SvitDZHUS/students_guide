@@ -30,11 +30,10 @@ Rails.application.routes.draw do
 
   resources :line_items, only: %i[destroy]
   post :add_item_to_cart, to: 'line_items#add_item_to_cart'
-  post :move_item_to_shelf, to: 'line_items#move_item_to_shelf'
 
   resources :books, only: %i[index show]
-  resources :carts, only: %i[show update]
-  resources :shelves, only: %i[show update]
+  resources :carts, only: %i[show]
+  resources :shelves, only: %i[show]
   resources :profiles, only: %i[show edit update]
 
   namespace :admin do

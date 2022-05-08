@@ -8,13 +8,6 @@ class LineItemsController < ApplicationController
     redirect_to current_user.cart
   end
 
-  def move_item_to_shelf
-    @line_item = LineItem.find(params[:id])
-    @line_item.destroy
-    flash[:notice] = t('.controller.remove_item_from_cart')
-    redirect_to current_user.cart
-  end
-
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy

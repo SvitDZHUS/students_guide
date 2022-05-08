@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Carts', type: :request do
+RSpec.describe 'Shelves', type: :request do
   let(:user) { create(:user) }
 
   before do
@@ -15,7 +15,7 @@ RSpec.describe 'Carts', type: :request do
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      get cart_url(user.cart)
+      get shelf_url(user.shelf)
       expect(response).to render_template(:show)
     end
   end

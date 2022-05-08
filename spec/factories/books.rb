@@ -2,13 +2,18 @@
 
 FactoryBot.define do
   factory :book do
-    title { Faker::Artist.name }
+    title { Faker::Book.title }
+    author { Faker::Book.author }
     description { Faker::Lorem.paragraph }
-    category { create :category }
-    price { Faker::Number.number(digits: 3) }
-    publishing_house { Faker::University.name }
+    categories { [create(:category)] }
+    price { Faker::Number.number(digits: 2) }
+    publishing_house { Faker::Book.publisher }
     publishing_date { Faker::Date.between(from: '2014-09-23', to: '2021-09-25') }
-    cover { Faker::File.extension }
+    cover { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/files/test.jpg')) }
     language { Faker::ProgrammingLanguage.name }
+  end
+
+  trait :invalid_book do
+    title { Faker::Lorem.characters(number: 2) }
   end
 end

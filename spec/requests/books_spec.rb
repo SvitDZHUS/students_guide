@@ -2,53 +2,100 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Books', type: :request do
+RSpec.describe 'Categories', type: :request do
+  let(:user) { create(:user, :admin) }
+
+  before do
+    sign_in(user)
+  end
+
+  after do
+    logout(user)
+  end
+
   describe 'GET /index' do
-    it 'returns http success' do
-      get '/books/index'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /new' do
-    it 'returns http success' do
-      get '/books/new'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /create' do
-    it 'returns http success' do
-      get '/books/create'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /edit' do
-    it 'returns http success' do
-      get '/books/edit'
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe 'GET /update' do
-    it 'returns http success' do
-      get '/books/update'
-      expect(response).to have_http_status(:success)
+    it 'renders a successful response' do
+      get admin_books_url
+      expect(response).to be_successful
     end
   end
 
   describe 'GET /show' do
-    it 'returns http success' do
-      get '/books/show'
-      expect(response).to have_http_status(:success)
+    let(:valid_book) { create(:book) }
+
+    it 'renders a successful response' do
+      get admin_book_url(valid_book)
+      expect(response).to render_template(:show)
     end
   end
 
-  describe 'GET /destroy' do
-    it 'returns http success' do
-      get '/books/destroy'
-      expect(response).to have_http_status(:success)
+  describe 'GET /new' do
+    it 'renders a successful response' do
+      get new_admin_book_url
+      expect(response).to render_template(:new)
+    end
+  end
+
+  describe 'GET /edit' do
+    let(:valid_book) { create(:book) }
+
+    it 'render a successful response' do
+      get edit_admin_book_url(valid_book)
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  describe 'POST /create' do
+    context 'with invalid parameters' do
+      let(:invalid_book) { attributes_for(:book, :invalid_book) }
+
+      it "renders a successful response (i.e. to display the 'new' template)" do
+        get new_admin_book_url
+        expect(response).to render_template(:new)
+        post admin_books_url, params: { book: invalid_book }
+        expect(response).to render_template(:new)
+      end
+    end
+  end
+
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let!(:valid_book) { create(:book) }
+      let(:edited_book) { attributes_for(:book) }
+
+      it 'updates the requested book' do
+        get edit_admin_book_url(valid_book)
+        expect(response).to render_template(:edit)
+        patch admin_book_url(valid_book), params: { book: edited_book }
+        expect(response).to redirect_to(admin_book_url(valid_book))
+        follow_redirect!
+        expect(response).to render_template(:show)
+      end
+    end
+
+    context 'with invalid parameters' do
+      let!(:valid_book) { create(:book) }
+      let(:edited_invalid_book) { attributes_for(:book, :invalid_book) }
+
+      it "renders a successful response (i.e. to display the 'edit' template)" do
+        get edit_admin_book_url(valid_book)
+        expect(response).to render_template(:edit)
+        patch admin_book_url(valid_book), params: { book: edited_invalid_book }
+        expect(response).to render_template(:edit)
+      end
+    end
+  end
+
+  describe 'DELETE /destroy' do
+    let!(:valid_book) { create(:book) }
+
+    it 'destroys the requested book' do
+      expect { delete admin_book_url(valid_book) }.to change(Book, :count).by(-1)
+    end
+
+    it 'redirects to the books list' do
+      delete admin_book_url(valid_book)
+      expect(response).to redirect_to(admin_books_url)
     end
   end
 end

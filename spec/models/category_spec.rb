@@ -7,4 +7,8 @@ RSpec.describe Category, type: :model do
     it { is_expected.to validate_presence_of(:category_name) }
     it { is_expected.to validate_length_of(:category_name).is_at_least(3).is_at_most(255) }
   end
+
+  describe 'associations' do
+    it { is_expected.to have_and_belong_to_many(:books) }
+  end
 end

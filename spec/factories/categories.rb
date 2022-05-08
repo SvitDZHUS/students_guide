@@ -2,6 +2,10 @@
 
 FactoryBot.define do
   factory :category do
-    category_name { Faker::Lorem.characters(number: 20) }
+    category_name { Faker::Book.genre }
+  end
+
+  trait :invalid_category do
+    category_name { Faker::Lorem.characters(number: 2) }
   end
 end
