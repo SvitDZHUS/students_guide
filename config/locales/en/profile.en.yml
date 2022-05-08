@@ -9,7 +9,6 @@ en:
       fill_in_profile: "Fill in your profile"
     edit:
       title: "Edit Profile"
-      back: "Back"
     controller:
       update: "Profile was successfully updated"
     form:

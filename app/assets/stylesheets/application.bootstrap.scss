@@ -72,8 +72,13 @@ a, a:hover {
   font-weight: 700;
 }
 
-.btn, .alert {
+.btn, .alert, .badge {
   border-radius: 0;
+}
+
+.badge {
+  color: #000;
+  font-size: 14px;
 }
 
 .form-control, .form-check-input {

@@ -11,6 +11,7 @@ en:
         author: "Author"
         description: "Description"
         price: "Price"
+        categories: "Categories"
         publishing_house: "Publishing House"
         publishing_date: "Publishing Date"
         cover: "Cover"

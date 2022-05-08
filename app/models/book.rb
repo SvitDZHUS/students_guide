@@ -10,4 +10,8 @@ class Book < ApplicationRecord
   validates :language, presence: true
   validates :cover, presence: true
   validates :categories, presence: true
+
+  def self.latest_books(number)
+    order(created_at: :desc).limit(number)
+  end
 end

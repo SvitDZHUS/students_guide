@@ -2,7 +2,7 @@
 .container
   - if @line_items.empty?
     .d-flex.justify-content-center.mb-4
-      h1 = t('carts.empty_title')
+      h1.display-6.text-center.border-bottom-brown.mb-4.pb-4 = t('carts.empty_title')
   - else
     .row.d-flex.justify-content-center
       .col-6

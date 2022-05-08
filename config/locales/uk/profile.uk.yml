@@ -9,7 +9,6 @@ uk:
       fill_in_profile: "Заповніть свій профіль"
     edit:
       title: "Редагувати Профіль"
-      back: "Назад"
     controller:
       update: "Профіль успішно оновлено"
     form:
