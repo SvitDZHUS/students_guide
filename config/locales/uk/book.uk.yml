@@ -1,7 +1,15 @@
 uk:
   usd: "дол. США"
+  admin:
+    books:
+      index:
+        new_book: "Нова Книжка"
+        edit: "Редагувати"  
+      controller:
+      create: "Книжку успішно створено"
+      update: "Книжку успішно оновлено"
+      destroy: "Книжку успішно видалено"
   books:
-    title: "Книжки"
     index:
       new_book: "Нова Книга"
     show:
@@ -12,19 +20,14 @@ uk:
       price: "Ціна:"
       publishing_house: "Видавництво:"
       publishing_date: "Дата Видання:"
+      created_at: "Створено:"     
+      updated_at: "Оновлено:"
       language: "Мова:"
-      back: "Назад"
       edit: "Редагувати"
     new:
-      title: "Нова Книга"
-      back: "Назад"
+      title: "Нова Книжка"
     edit:
-      title: "Редагувати Книгу"
-      back: "Назад"
-    controller:
-      create: "Книгу успішно створено"
-      update: "Книгу успішно оновлено"
-      destroy: "Книгу успішно видалено"
+      title: "Редагувати Книжку"
     form:
       categories: "Категорії"
       title_placeholder: "Введіть назву книги"

@@ -11,6 +11,7 @@ uk:
         author: "Автор"
         description: "Опис"
         price: "Ціна"
+        categories: "Категорії"
         publishing_house: "Видавництво"
         publishing_date: "Дата Видання"
         cover: "Обкладинка"

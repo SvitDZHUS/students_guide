@@ -3,6 +3,8 @@
 class User < ApplicationRecord
   enum role: { member: 0, admin: 1 }
 
+  scope :all_except, ->(user) { where.not(id: user) }
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   has_one :cart, inverse_of: :owned_by, foreign_key: 'owned_by_id', dependent: :destroy

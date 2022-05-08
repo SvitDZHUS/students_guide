@@ -2,7 +2,7 @@
 .container
   = link_to books_path, class: 'border-brown animated-shadow btn font-weight-bold align-self-start mb-4' do 
     i.bi.bi-caret-left
-    = t('.back')
+    = t('global.back')
   .row 
     .col-6.d-flex.justify-content-center
       = image_tag @book.cover.url(:large)
@@ -30,12 +30,12 @@
         =< @book.publishing_house
       p 
         strong = t('.publishing_date')
-        =< l @book.publishing_date, format: :publishing_date_format
+        =< l @book.publishing_date, format: :date_format
       p 
         strong = t('.language')
         =< @book.language
       - if current_user.admin?
-        =< link_to edit_book_path(@book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
+        =< link_to edit_admin_book_path(@book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
           i.bi.bi-pencil-square
           =< t('.edit')
       - else 
