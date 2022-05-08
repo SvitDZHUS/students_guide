@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   # root 'welcome_pages#welcome'
   devise_scope :user do
     authenticated :user, ->(u) { u.role == 'admin' } do
-      root to: "admin/books#index", as: :admin_root
+      root to: 'admin/books#index', as: :admin_root
     end
 
     authenticated :user, ->(u) { u.role == 'member' } do
-      root to: "books#index", as: :member_root
+      root to: 'books#index', as: :member_root
     end
 
     unauthenticated do
