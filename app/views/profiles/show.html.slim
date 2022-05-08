@@ -2,12 +2,7 @@
 .container.d-flex.justify-content-center
   .col-6.d-flex.flex-column.align-items-stretch
     - if @profile.first_name
-      p
-        strong = t('.first_name')
-        =< @profile.first_name
-      p 
-        strong = t('.last_name')
-        =< @profile.last_name
+      h1.display-3.text-center.border-bottom-brown.mb-4.pb-4 = "#{@profile.first_name} #{@profile.last_name}"
       p 
         strong = t('.phone')
         =< @profile.phone
