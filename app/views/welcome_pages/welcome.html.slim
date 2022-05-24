@@ -7,10 +7,10 @@
     h1.display-4.text-center.border-bottom-brown.my-4.pb-4 = t('welcome_pages.welcome.latest_books')
     .row.d-flex.justify-content-center
       - @latest_books.each do |book|
-        .col-5.row.border-brown.p-4.m-2
-          .cover.col-4
+        .col-10.col-md-5.row.border-brown.p-4.m-2
+          .cover.col-6.col-md-4
             = image_tag book.cover.url(:small)
-          .info.col-8
+          .info.col-6.col-md-8
             h3 = book.title 
             p.lead = book.author 
             p 
