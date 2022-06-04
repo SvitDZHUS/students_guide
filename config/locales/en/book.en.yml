@@ -11,6 +11,9 @@ en:
         update: "Category was successfully updated"
         destroy: "Category was successfully deleted"     
   books:
+    index: 
+      title: "List of all books"
+      show: "Show"
     show:
       title: "Title:"
       author: "Author:"

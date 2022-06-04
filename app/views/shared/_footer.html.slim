@@ -1,0 +1,7 @@
+footer.navbar.dark-brown.p-3
+  .container.d-flex.justify-content-between.align-items-center
+    p.logo = t('footer.logo')
+    ul.nav.d-flex.align-items-center
+      li.nav-item = link_to t('footer.welcome'), welcome_path, class: "btn-lg font-weight-bold mx-2" 
+      li.nav-item = link_to t('footer.about'), '#', class: "btn-lg font-weight-bold mx-2"  
+      li.nav-item = link_to t('footer.contacts'), '#', class: "btn-lg font-weight-bold mx-2" 

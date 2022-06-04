@@ -13,6 +13,11 @@ uk:
     sign_in: "Увійти"
     sign_up: "Зареєструватись"
     sign_out: "Вийти"
+  footer:
+    logo: "\/BOOKER.ka"
+    welcome: "Головна"
+    about: "Про Нас"
+    contacts: "Контакти"
   sidebar:
     admin_logo: "BOOKER.ka | ADMIN"
     member_logo: "BOOKER.ka | MEMBER"
@@ -26,7 +31,7 @@ uk:
     welcome: 
       title: "Вітаємо у BOOKER.ka"
       subtitle: "Шукайте книги, купуйте книги, читайте книги. Усе в одному місці!"
-      latest_books: "Найновіші Книжки"
+      latest_books: "Найновіші книжки для Вас"
   date:
     formats:
       date_format: "%d %b %Y"

@@ -11,4 +11,14 @@ html
   body
     = render 'shared/header'
     = render 'shared/messages'
-    = yield
+    .wrapper.flex-grow-1
+      .container-fluid.d-flex.flex-column.hero.light-brown
+        .container.text-left
+          h1.display-1 = t('welcome_pages.welcome.title')
+          h2.mb-4 = t('welcome_pages.welcome.subtitle')
+      .container.d-flex.justify-content-end.mb-4
+        ul.nav
+          = render 'shared/language_switcher'
+      = yield
+    .container
+      = render 'shared/footer'

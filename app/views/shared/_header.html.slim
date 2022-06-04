@@ -1,8 +1,7 @@
-header.navbar.border-bottom-brown.justify-content-end
+header.navbar.dark-brown.justify-content-end.p-3
   ul.nav.d-flex.align-items-center
     - if user_signed_in?
-      li.nav-item = button_to t('header.sign_out'), destroy_user_session_path, method: :delete, class: "btn border-brown animated-shadow font-weight-bold mx-2" 
+      li.nav-item = button_to t('header.sign_out'), destroy_user_session_path, method: :delete, class: "btn-lg white shadow radius-5 font-weight-bold mx-2" 
     - else
-    	li.nav-item = link_to t('header.sign_in'), new_user_session_path, class: "btn border-brown animated-shadow font-weight-bold mx-1" 
-    	li.nav-item = link_to t('header.sign_up'), new_user_registration_path, class: "btn border-brown animated-shadow font-weight-bold mx-2"  
-    li.nav-item = render 'shared/language_switcher' 
+    	li.nav-item = link_to t('header.sign_in'), new_user_session_path, class: "btn-lg white shadow radius-5 font-weight-bold mx-2" 
+    	li.nav-item = link_to t('header.sign_up'), new_user_registration_path, class: "btn-lg white shadow radius-5 font-weight-bold mx-2"  

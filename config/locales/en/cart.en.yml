@@ -6,3 +6,6 @@ en:
     create_order: "Create Order"
   shelves:
     empty_title: "Your Shelf Is Empty"
+    show: 
+      title: "Your e-bookshelf"
+      show: "Show"
