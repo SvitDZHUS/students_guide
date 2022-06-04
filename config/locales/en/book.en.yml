@@ -2,8 +2,8 @@ en:
   usd: "USD"
   admin:
     books:
-      title: "Books"
       index:
+        title: "Books"
         new_book: "New Book"
         edit: "Edit"  
       controller:

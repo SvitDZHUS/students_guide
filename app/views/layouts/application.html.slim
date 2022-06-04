@@ -2,7 +2,7 @@ doctype html
 html
   head
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
-    title BOOKER.ka | MEMBER
+    title BOOKER.ka
     meta content="width=device-width,initial-scale=1" name="viewport" /
     = csrf_meta_tags
     = csp_meta_tag
@@ -17,7 +17,7 @@ html
           h1.display-3 = t('welcome_pages.welcome.title')
       .container.d-flex.justify-content-end.mb-4
         ul.nav
-          = render 'shared/member_navbar'
+          = render 'shared/member_navbar' if user_signed_in?
           = render 'shared/language_switcher'
       = yield
     .container

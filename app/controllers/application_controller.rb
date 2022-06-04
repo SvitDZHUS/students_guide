@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  layout 'public'
-
   before_action :set_locale
 
   private

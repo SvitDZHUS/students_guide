@@ -3,6 +3,7 @@ en:
     categories:
       title: "Categories"
       index:
+        title: "Categories"
         name: "Category Name"
         new_category: "New Category"
         edit: "Edit"

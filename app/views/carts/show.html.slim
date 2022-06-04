@@ -1,4 +1,4 @@
-.container
+.container.py-4
   - if @line_items.empty?
     .d-flex.justify-content-center.mb-4
       h1.display-6.text-center.mb-4.pb-4 = t('carts.empty_title')
@@ -15,13 +15,10 @@
               p.book-price-sm
                 =< line_item.book.price
                 =< I18n.t('.usd')
-              .d-flex.justify-content-end
-                =< link_to line_item.book, class:"mx-2 btn dark-brown shadow radius-5", title: t('.edit') do
-                  i.bi.bi-eye
-                =< button_to line_item, form: { data: { turbo_confirm: t('global.forms.confirm') } }, class:"mx-2 btn dark-brown shadow radius-5", method: :delete do
-                  i.bi.bi-trash3
-                  strong =< t('line_items.destroy.remove_from_cart')
-      .col-4.p-4.light-brown.radius-10
+              .d-flex.justify-content-center
+                = link_to t('line_items.show'), line_item.book, class:"mx-2 btn-lg dark-brown shadow radius-5", title: t('.edit')
+                = button_to t('line_items.destroy.remove_from_cart'), line_item, form: { data: { turbo_confirm: t('global.forms.confirm') } }, class:"mx-2 btn-lg dark-brown shadow radius-5", method: :delete
+      .col-12.col-md-5.p-4.light-brown.radius-10
         h1.mb-4 = t('carts.order_title')
         .d-flex.flex-column.mb-4
           h2 = t('carts.total_price')
