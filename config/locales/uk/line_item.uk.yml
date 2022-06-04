@@ -1,5 +1,6 @@
 uk:
   line_items:
+    show: "Переглянути"
     controller:
       add_item_to_cart: "Книжку додано до кошика"
       remove_item_from_cart: "Книжку видалено з кошика"

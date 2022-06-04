@@ -1,11 +1,10 @@
-= render 'shared/banner'
-.container
-  = link_to admin_books_path, class: 'border-brown animated-shadow btn font-weight-bold align-self-start mb-4' do 
+.container.py-4
+  = link_to admin_books_path, class: 'dark-brown border-brown animated-shadow btn font-weight-bold align-self-start mb-4' do 
     i.bi.bi-caret-left
     = t('global.back')
   .row.p-4
     .col-4.d-flex.justify-content-center
-      = image_tag @book.cover.url(:large)
+      = image_tag @book.cover.url(:large), class: "radius-10 shadow"
     .col-8
       .d-flex.align-items-end.text-center.border-bottom-brown.mb-4.pb-4
         h1.display-3 =< @book.title
@@ -37,9 +36,9 @@
         strong = t('books.show.updated_at')
         =< l @book.updated_at, format: :datetime_format
       .d-flex.justify-content-end.border-top-brown.p-4
-        =< link_to edit_admin_book_path(@book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
+        =< link_to edit_admin_book_path(@book), class:"mx-2 btn-lg dark-brown border-brown animated-shadow", title: t('.edit') do
           i.bi.bi-pencil-square
           =< t('books.show.edit')
-        =< button_to admin_book_path(@book), form: { data: { turbo_confirm: t('global.forms.confirm') } }, class:"mx-2 btn border-brown animated-shadow", title: t('global.destroy'), method: :delete do
+        =< button_to admin_book_path(@book), form: { data: { turbo_confirm: t('global.forms.confirm') } }, class:"mx-2 btn-lg dark-brown border-brown animated-shadow", title: t('global.destroy'), method: :delete do
           i.bi.bi-trash
           =< t('global.destroy')

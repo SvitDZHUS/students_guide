@@ -1,3 +1,5 @@
 - I18n.available_locales.each do |locale|
   - unless current_locale?(locale)
-    li.nav-item.d-flex.bookmark.shadow.dark-brown = button_to I18n.t("global.#{locale}_switch"), locale_path(locale), method: :put, class: "btn-lg font-weight-bold mx-2"
+    li.nav-item.d-flex.bookmark.shadow.dark-brown 
+      = button_to locale_path(locale), method: :put, class: "btn-lg font-weight-bold mx-2" do
+        = image_tag("#{locale}.png")

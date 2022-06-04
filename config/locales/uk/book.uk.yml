@@ -3,6 +3,7 @@ uk:
   admin:
     books:
       index:
+        title: "Усі Книжки"
         new_book: "Нова Книжка"
         edit: "Редагувати"  
       controller:

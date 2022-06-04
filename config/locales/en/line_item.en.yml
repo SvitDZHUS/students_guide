@@ -1,5 +1,6 @@
 en:
   line_items:
+    show: "Show"
     controller:
       add_item_to_cart: "Book was added to your cart"
       remove_item_from_cart: "Book was removed from your cart"

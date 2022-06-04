@@ -1,5 +1,4 @@
-= render 'shared/banner'
-.container.d-flex.flex-column.justify-content-center.align-items-center
+.container.d-flex.flex-column.justify-content-center.align-items-center.py-4
   h1.display-3.mb-4.pb-4 = t('.title')
   table.table
     thead
@@ -15,5 +14,5 @@
           td = user.role.capitalize
           td
             .d-flex.justify-content-end
-              =< link_to admin_user_path(user), class:"mx-4 btn border-brown animated-shadow", title: t('.show') do
+              =< link_to admin_user_path(user), class:"mx-4 btn dark-brown border-brown animated-shadow", title: t('.show') do
                 i.bi.bi-eye
