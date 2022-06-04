@@ -1,4 +1,3 @@
-.d-flex.justify-content-end.border-left-brown
-  .d-flex.mx-2
-    - I18n.available_locales.each do |locale|
-      = button_to I18n.t("global.#{locale}_switch"), locale_path(locale), method: :put, class: "btn border-brown animated-shadow font-weight-bold #{'disabled' if current_locale?(locale)}"
+- I18n.available_locales.each do |locale|
+  - unless current_locale?(locale)
+    li.nav-item.d-flex.bookmark.shadow.dark-brown = button_to I18n.t("global.#{locale}_switch"), locale_path(locale), method: :put, class: "btn-lg font-weight-bold mx-2"

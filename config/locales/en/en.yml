@@ -13,6 +13,11 @@ en:
     sign_in: "Sign In"
     sign_up: "Sign Up"
     sign_out: "Sign Out"
+  footer:
+    logo: "\/BOOKER.ka"
+    welcome: "Welcome"
+    about: "About"
+    contacts: "Contacts"
   sidebar:
     admin_logo: "BOOKER.ka | ADMIN"
     member_logo: "BOOKER.ka | MEMBER"
@@ -24,9 +29,9 @@ en:
     shelf: "Shelf"
   welcome_pages:
     welcome: 
-      title: "Welcome to BOOKER.ka"
+      title: "Welcome to the BOOKER.ka"
       subtitle: "Find books, buy books, manage books. Everything in one place!"
-      latest_books: "The Latest Books"
+      latest_books: "The latest books for you"
   date:
     formats:
       date_format: "%d %b %Y"

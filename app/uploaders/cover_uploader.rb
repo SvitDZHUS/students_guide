@@ -17,7 +17,7 @@ class CoverUploader < CarrierWave::Uploader::Base
   end
 
   version :small do
-    process resize_to_fit: [100, 300]
+    process resize_to_fit: [120, 360]
   end
 
   version :large do

@@ -8,10 +8,17 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
-  body.row.m-0.p-0
-    .col-2.p-0
-      = render "shared/sidebar"
-    .col-10.p-0.pb-4
-      = render 'shared/header'
-      = render 'shared/messages'
+  body.m-0.p-0
+    = render 'shared/header'
+    = render 'shared/messages'
+    .wrapper.flex-grow-1
+      .container-fluid.d-flex.flex-column.hero.light-brown
+        .container.text-left
+          h1.display-3 = t('welcome_pages.welcome.title')
+      .container.d-flex.justify-content-end.mb-4
+        ul.nav
+          = render 'shared/member_navbar'
+          = render 'shared/language_switcher'
       = yield
+    .container
+      = render 'shared/footer'

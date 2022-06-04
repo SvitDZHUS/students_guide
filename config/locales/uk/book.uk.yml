@@ -10,8 +10,9 @@ uk:
       update: "Книжку успішно оновлено"
       destroy: "Книжку успішно видалено"
   books:
-    index:
-      new_book: "Нова Книга"
+    index: 
+      title: "Список усіх книжок"
+      show: "Переглянути"
     show:
       title: "Назва:"
       author: "Автор:"
