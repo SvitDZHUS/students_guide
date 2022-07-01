@@ -4,10 +4,6 @@
   .row 
     .col-12.col-md-5.d-flex.justify-content-center.position-relative
       = image_tag @book.cover.url(:large), class: "shadow radius-10"
-      .price-tag.light-brown
-        p.mb-0 
-          =< @book.price
-          =< I18n.t('.usd')
     .col-12.col-md-7
       p.book-title-lg = @book.title
       p.book-author-lg.mb-4 = @book.author
@@ -29,10 +25,5 @@
         strong = t('.language')
         =< @book.language
       .d-flex.justify-content-end
-        - if current_user.admin?
-          =< link_to edit_admin_book_path(@book), class:"mx-2 btn border-brown animated-shadow", title: t('.edit') do
-            i.bi.bi-pencil-square
-            =< t('.edit')
-        - else 
-          =< button_to add_item_to_cart_path(book_id: @book), class:"mx-2 btn-lg dark-brown shadow p-3", method: :post do 
-            strong =< t('line_items.create.add_to_cart')
+        =< link_to t('.edit'), edit_book_path(@book), class:"mx-2 btn-lg dark-brown shadow", title: t('.edit')
+        =< link_to t('.download'), @book.file.url, target: "_blank", class:"mx-2 btn-lg dark-brown shadow", title: t('.edit')

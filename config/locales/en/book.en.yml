@@ -1,19 +1,9 @@
 en:
-  usd: "USD"
-  admin:
-    books:
-      index:
-        title: "Books"
-        new_book: "New Book"
-        edit: "Edit"  
-      controller:
-        create: "Category was successfully created"
-        update: "Category was successfully updated"
-        destroy: "Category was successfully deleted"     
   books:
     index: 
       title: "List of all books"
       show: "Show"
+      new_book: "New book"
     show:
       title: "Title:"
       author: "Author:"
@@ -26,6 +16,7 @@ en:
       updated_at: "Updated At:"
       language: "Language:"
       edit: "Edit"
+      download: "Download"
     form:
       categories: "Categories"
       title_placeholder: "Write book's title"
@@ -34,7 +25,13 @@ en:
       price_placeholder: "Write book's price, USD"
       publishing_house_placeholder: "Write book's publishing house"
       language_placeholder: "Write book's language"
+      cover_hint: "Please, upload the cover in jpg, jpeg, or png formats"
+      file_hint: "Please, upload the file in pdf, doc, or docx formats"
     new:
       title: "New Book"
     edit:
       title: "Edit Book"
+    controller:
+      create: "Category was successfully created"
+      update: "Category was successfully updated"
+      destroy: "Category was successfully deleted"  

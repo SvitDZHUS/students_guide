@@ -1,0 +1,5 @@
+.container.d-flex.justify-content-center
+  .col-6.d-flex.flex-column.align-items-stretch.py-4
+    = link_to t('global.back'), categories_path, class: 'dark-brown shadow btn-lg font-weight-bold align-self-start mb-4'
+    h1.display-3.text-center.border-bottom-brown.mb-4.pb-4 = t('categories.new.title')
+    = render 'categories/form'

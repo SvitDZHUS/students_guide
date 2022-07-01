@@ -6,7 +6,7 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin?
+    true
   end
 
   def new?
@@ -14,7 +14,7 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    true
   end
 
   def edit?
@@ -22,6 +22,6 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.admin?
+    true
   end
 end

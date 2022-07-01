@@ -15,6 +15,7 @@ uk:
         publishing_house: "Видавництво"
         publishing_date: "Дата Видання"
         cover: "Обкладинка"
+        file: "Файл"
         language: "Мова"
       profile:
         first_name: "Ім'я"

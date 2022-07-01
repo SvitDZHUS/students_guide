@@ -7,12 +7,10 @@ ruby '2.7.4'
 
 gem 'bootsnap', require: false
 gem 'carrierwave'
-gem 'cocoon'
 gem 'cssbundling-rails'
 gem 'devise', '~> 4.8'
 gem 'jbuilder'
 gem 'jsbundling-rails'
-gem 'paypal-checkout-sdk'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'pundit', '~> 2.2'

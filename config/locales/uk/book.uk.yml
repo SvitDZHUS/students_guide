@@ -1,19 +1,9 @@
 uk:
-  usd: "дол. США"
-  admin:
-    books:
-      index:
-        title: "Усі Книжки"
-        new_book: "Нова Книжка"
-        edit: "Редагувати"  
-      controller:
-      create: "Книжку успішно створено"
-      update: "Книжку успішно оновлено"
-      destroy: "Книжку успішно видалено"
   books:
     index: 
       title: "Список усіх книжок"
       show: "Переглянути"
+      new_book: "Нова Книжка"
     show:
       title: "Назва:"
       author: "Автор:"
@@ -26,6 +16,7 @@ uk:
       updated_at: "Оновлено:"
       language: "Мова:"
       edit: "Редагувати"
+      download: "Завантажити"
     new:
       title: "Нова Книжка"
     edit:
@@ -38,3 +29,9 @@ uk:
       price_placeholder: "Введіть ціну книги, грн"
       publishing_house_placeholder: "Введіть назву видавництва книги"
       language_placeholder: "Введіть мову написання книги"
+      cover_hint: "Будь ласка, завантажте обкладинку у jpg, jpeg або png форматах"
+      file_hint: "Будь ласка, завантажте файл у pdf, doc, or docx форматах"
+    controller:
+      create: "Книжку успішно створено"
+      update: "Книжку успішно оновлено"
+      destroy: "Книжку успішно видалено"

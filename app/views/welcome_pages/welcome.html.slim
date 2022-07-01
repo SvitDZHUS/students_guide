@@ -9,7 +9,4 @@
             = image_tag book.cover.url(:small), class: "shadow radius-5"
           .info.col-4.col-md-8
             p.book-title-sm = book.title 
-            p.book-author-sm = book.author 
-            p.book-price-sm
-              =< book.price
-              =< I18n.t('.usd')
+            p.book-author-sm = book.author

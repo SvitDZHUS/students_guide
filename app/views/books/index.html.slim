@@ -1,6 +1,7 @@
 .d-flex.justify-content-center.flex-column
-  .container
+  .container.d-flex.justify-content-between.align-items-center
     h1.display-4.text-left.my-4.pb-2 = t('.title')
+    = link_to t('.new_book'), new_book_path, class:"btn-lg border-brown dark-brown shadow font-weight-bold w-25"
   .container.mb-80
     .row.d-flex.justify-content-center.flex-container
       - @books.each do |book|
@@ -12,7 +13,4 @@
               p.book-title-sm = book.title 
               p.book-author-sm = book.author 
             .d-flex.justify-content-between
-              p.book-price-sm
-                =< book.price
-                =< I18n.t('.usd')
               =< link_to t('.show'), book, class:"mx-2 btn dark-brown shadow", title: t('.edit')

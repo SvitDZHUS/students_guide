@@ -10,7 +10,7 @@ class BookPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin?
+    true
   end
 
   def new?
@@ -18,7 +18,7 @@ class BookPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    true
   end
 
   def edit?
@@ -26,6 +26,6 @@ class BookPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.admin?
+    true
   end
 end

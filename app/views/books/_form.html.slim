@@ -1,4 +1,4 @@
-= simple_form_for([:admin, @book]) do |f|
+= simple_form_for(@book) do |f|
   .field.mb-4
     = f.input :title, placeholder: t('books.form.title_placeholder')
   .field.mb-4
@@ -9,15 +9,19 @@
     .d-flex.flex-column.mt-1
       = f.association :categories, as: :check_boxes, label_method: :category_name, value_method: :id, include_blank: false, collection: @categories, wrapper: :vertical_collection_inline 
   .field.mb-4
-    = f.input :price, placeholder: t('books.form.price_placeholder')
-  .field.mb-4
     = f.input :publishing_house, placeholder: t('books.form.publishing_house_placeholder')
   .field.mb-4
     = f.input :publishing_date, start_year: 990.years.ago.year, placeholder: t('books.form.publishing_date_placeholder')
   .field.mb-4
     = f.input :language, placeholder: t('books.form.language_placeholder')
-  .field.mb-4.border-brown.p-3
+  .field.mb-4.brown.p-3.dark-brown.radius-5
     = f.label :cover
+    p = t('books.form.cover_hint')
     .d-flex.mt-1
       = f.file_field :cover, class: "custom-file-input"
-  = f.submit t('global.forms.submit'), class:"btn-lg text-center dark-brown border-brown animated-shadow font-weight-bold w-100"
+  .field.mb-4.brown.p-3.dark-brown.radius-5
+    = f.label :file
+    p = t('books.form.file_hint')
+    .d-flex.mt-1
+      = f.file_field :file, class: "custom-file-input"
+  = f.submit t('global.forms.submit'), class:"btn-lg text-center dark-brown border-brown shadow font-weight-bold w-100"
