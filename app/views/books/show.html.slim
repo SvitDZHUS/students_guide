@@ -26,4 +26,5 @@
         =< @book.language
       .d-flex.justify-content-end
         =< link_to t('.edit'), edit_book_path(@book), class:"mx-2 btn-lg dark-brown shadow", title: t('.edit')
+        =< button_to t('.destroy'), book_path(@book), form: { data: { turbo_confirm: t('global.forms.confirm') } }, class:"mx-2 btn-lg dark-brown shadow", title: t('global.destroy'), method: :delete
         =< link_to t('.download'), @book.file.url, target: "_blank", class:"mx-2 btn-lg dark-brown shadow", title: t('.edit')
