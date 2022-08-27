@@ -16,6 +16,7 @@ uk:
       updated_at: "Оновлено:"
       language: "Мова:"
       edit: "Редагувати"
+      destroy: "Видалити"
       download: "Завантажити"
     new:
       title: "Нова Книжка"

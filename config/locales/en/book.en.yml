@@ -16,6 +16,7 @@ en:
       updated_at: "Updated At:"
       language: "Language:"
       edit: "Edit"
+      destroy: "Destroy"
       download: "Download"
     form:
       categories: "Categories"
